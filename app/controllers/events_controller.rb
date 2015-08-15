@@ -6,7 +6,25 @@ class EventsController < ApplicationController
 
  
   def get_events
+
+
+
     @task = Event.all
+    events = []
+
+    @task.each do |task|
+    pasado = task.end 
+    clase = ""
+    if task.end < DateTime.now #ayer
+      events << {:id => task.id, :title => "#{task.title}", :start => "#{task.start}",:end => "#{task.end}",  "className" => clase}
+    else if (task.start > DateTime.now.midnight) && (task.end < DateTime.now.end_of_day)
+
+      events << {:id => task.id, :title => "#{task.title}", :start => "#{task.start}",:end => "#{task.end}"}
+    else if task.end < DateTime.now
+      events << {:id => task.id, :title => "#{task.title}", :start => "#{task.start}",:end => "#{task.end}",  "className" => clase}
+    end
+    end
+     
     render json: @task
   end
   

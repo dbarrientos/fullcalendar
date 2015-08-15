@@ -14,3 +14,24 @@
  *= require_self
  *= require fullcalendar
  */
+
+.ayer
+{
+    background-color: #FF9933; /* background color */
+    border-color: #FF9933;     /* border color */
+    color: black;           /* text color */
+}
+
+.manana
+{
+  background-color: #66FFFF; /* background color */
+  border-color: #66FFFF;     /* border color */
+  color: black; 
+}
+
+.todoeldia
+{
+  background-color: #99FF33; /* background color */
+  border-color: #99FF33;     /* border color */
+  color: black;
+}
