@@ -3,6 +3,15 @@ class EventsController < ApplicationController
 
   # GET /events
   # GET /events.json
+
+ 
+  def get_events
+    @task = Event.all
+    render json: @task
+  end
+  
+
+
   def index
     @events = Event.all
   end
@@ -69,6 +78,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :date_start, :date_end, :all_day)
+      params.require(:event).permit(:title, :start, :end, :all_day)
     end
 end

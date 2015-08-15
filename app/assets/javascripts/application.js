@@ -16,3 +16,14 @@
 //= require_tree .
 //= require moment
 //= require fullcalendar
+
+$(document).ready(function() {
+    // página cargada, inicializamos el calendario...
+  $('#calendar').fullCalendar({
+    events: "/events/get_events.json",
+    
+    header: { center: 'month,agendaWeek,agendaDay' },
+  });
+});
+
+
